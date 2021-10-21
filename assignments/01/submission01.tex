@@ -1,0 +1,60 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[parfill]{parskip}
+
+\begin{document}
+
+\section*{CptS-411 | Homework-01 }
+\subsection*{Charles Norden, \#011606177 }
+
+\subsection*{PROBLEM 1:}
+1. Consider a program whose sequential execution time is 100 days. Assume that the program can be parallelized and the performance scales linearly in terms of number of processors. Write an expression to compute the parallel execution time in terms of P, where P is the number of parallel processors. (1 mark)
+
+\hline
+Given the 100-day execution time, that is our upperbound for time complexity. The amount of time we can parallelize is at most equal to this time. The Speedup S is:
+
+\[ S = \frac{p}{p * t_{s} + t_{p}} \]
+
+Thus, parallel time \(t_{p}\) is as follows:
+
+\[ t_{p} = \frac{p}{S} - p * t_{s} \]
+
+\[ t_{p} = \frac{p}{S} - p * 100 \]
+
+where \(t_{s} = 0\) days, assuming that the entirety of the program is parallelizable.
+
+\pagebreak
+
+
+\subsection*{PROBLEM 2:}
+1. Consider a program whose sequential execution time is 100 days. Assume that the program can be parallelized and the performance scales linearly in terms of number of processors. Write an expression to compute the parallel execution time in terms of P, where P is the number of parallel processors. (1 mark)
+
+\hline
+Given the 100-day execution time, that is our upperbound for time complexity. The amount of time we can parallelize is at most equal to \(60%\) of this amount. The Speedup S is:
+
+\[ S = \frac{p}{p * t_{s} + t_{p}} \]
+
+Thus, parallel time \(t_{p}\) is as follows:
+
+\[ t_{p} = \frac{p}{S} - p * t_{s} \]
+
+\[ t_{p} = \frac{p}{S} - p * 40 \]
+
+where \(t_{s} = 40\) days.
+
+\pagebreak
+
+
+\subsection*{PROBLEM 3:}
+In this section, I want to see if the title will be pushed up further if I try to fill the page with more
+text. I certainly don't want it to occupy only the center of the page because that would be a waste of page
+estate.
+
+Let's also add some mathematical equation in here to expand the size of the content:
+
+\[ \sum_{i=1}^{N} \frac {i^2} {N} \]
+
+This is another equation:
+
+\[ \lim_{x \to \infty } \frac{x^2}{log_2 x} \]
+
+\end{document}

@@ -5,26 +5,21 @@
  * Distributed under terms of the GNU LGPL3 license.
  */
 
-#include <stdio.h>
 #include <omp.h>
+#include <stdio.h>
 
-int main()
-{
+int main() {
 
-
-    double start = omp_get_wtime();
-    //timed code
-    {
-        #pragma omp parallel for
-        for (int i = 0; i < 100; ++i)
-        {
-		printf("Hello from thread %d working on iteration %d\n", omp_get_thread_num(), i);
-
-        }
-
+  double start = omp_get_wtime();
+  // timed code
+  {
+#pragma omp parallel for
+    for (int i = 0; i < 100; ++i) {
+      printf("Hello from thread %d working on iteration %d\n",
+             omp_get_thread_num(), i);
     }
-    double end = omp_get_wtime();
-    double time_in_s = end - start;
-    printf("\n\nTime taken is %lfs\n", time_in_s);
-
+  }
+  double end = omp_get_wtime();
+  double time_in_s = end - start;
+  printf("\n\nTime taken is %lfs\n", time_in_s);
 }
