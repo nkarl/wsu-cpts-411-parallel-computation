@@ -13,7 +13,7 @@ Consider a program whose sequential execution time is 100 days. Assume that the 
 
 Given that 100\% of the execution time is parallelizable, the serial time \(t_s = 0\). Thus, the Speedup S is:
 
-\[ S = \frac{P}{P * t_s + t_p} \]
+\[ S = \frac{P}{t_sP + t_p} \]
 
 \[ S = \frac{P}{1} \]
 
@@ -33,9 +33,9 @@ Consider a program whose sequential execution time is 100 days. Part A of this p
 
 Given that only 60\% of the total execution time is parallelizable, the serial time \(t_s = 0.4\). Thus, the speedup S is:
 
-\[ S = \frac{P}{P * t_s + t_p} \]
+\[ S = \frac{P}{t_sP + t_p} \]
 
-\[ S = \frac{P}{P * 0.4 + 0.6} \]
+\[ S = \frac{P}{0.4P + 0.6} \]
 
 \[ S = \frac{1}{ 0.4 + \frac{0.6}{P}} \]
 
@@ -43,7 +43,7 @@ Thus, parallel time \(t_p\) is as follows:
 
 \[ t_p = \frac{T_s}{S} \]
 
-\[ t_p = 100 * (0.4 + \frac{0.6}{P}) \]
+\[ t_p = 100(0.4 + \frac{0.6}{P}) \]
 
 \pagebreak
 
@@ -54,11 +54,9 @@ part B) (2 marks)
 
 \hline
 
-a. \(d\) is dependent on \(a\) and \(b\). \(c\) is dependent on \(a\) and \(b\).
+a. \(c\) and \(d\) are dependent on \(a\) and \(b\).
 
-b. 
-
-\pagebreak
+b. The two outer loops are dependent on the innermost loop (the one with incrementing \(k\)).
 
 
 \subsection*{PROBLEM 4:}
