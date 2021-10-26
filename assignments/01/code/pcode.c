@@ -34,6 +34,7 @@ int main() {
   // timer start
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) {
+#pragma omp parallel
       for (int k = 0; k < N; ++k) {
         C[i * N * N + j * N + k] =
             A[i * N * N + j * N + k] + B[i * N * N + j * N + k];
