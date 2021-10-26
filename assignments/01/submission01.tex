@@ -3,25 +3,25 @@
 
 \begin{document}
 
-\section*{CptS-411 | Homework-01 }
-\subsection*{Charles Norden, \#011606177 }
+\section*{CptS 411 | Homework-01 }
+\subsection*{Charles Norden -- 011606177 }
 
 \subsection*{PROBLEM 1:}
 Consider a program whose sequential execution time is 100 days. Assume that the program can be parallelized and the performance scales linearly in terms of number of processors. Write an expression to compute the parallel execution time in terms of P, where P is the number of parallel processors. (1 mark)
 
 \hline
 
-Given the 100-day execution time, that is our upperbound for time complexity. The amount of time we can parallelize is at most equal to this time. The Speedup S is:
+Given that 100\% of the execution time is parallelizable, the serial time \(t_s = 0\). Thus, the Speedup S is:
 
-\[ S = \frac{p}{p * t_{s} + t_{p}} \]
+\[ S = \frac{P}{P * t_s + t_p} \]
 
-Thus, parallel time \(t_{p}\) is as follows:
+\[ S = \frac{P}{1} \]
 
-\[ t_{p} = \frac{p}{S} - p * t_{s} \]
+Since \(t_p = 100\% = 1\), the speedup S is equal to and scales with the number of cores available. Then, the parallel time \(t_{P}\) is as follows:
 
-\[ t_{p} = \frac{p}{S} - p * 100 \]
+\[ t_p = \frac{T_s}{S} \]
 
-where \(t_{s} = 0\) days, assuming that the entirety of the program is parallelizable.
+\[ t_p = \frac{100}{P} \]
 
 \pagebreak
 
@@ -31,17 +31,19 @@ Consider a program whose sequential execution time is 100 days. Part A of this p
 
 \hline
 
-Given the 100-day execution time, that is our upperbound for time complexity. The amount of time we can parallelize is at most equal to \(60%\) of this amount. The Speedup S is:
+Given that only 60\% of the total execution time is parallelizable, the serial time \(t_s = 0.4\). Thus, the speedup S is:
 
-\[ S = \frac{p}{p * t_{s} + t_{p}} \]
+\[ S = \frac{P}{P * t_s + t_p} \]
 
-Thus, parallel time \(t_{p}\) is as follows:
+\[ S = \frac{P}{P * 0.4 + 0.6} \]
 
-\[ t_{p} = \frac{p}{S} - p * t_{s} \]
+\[ S = \frac{1}{ 0.4 + \frac{0.6}{P}} \]
 
-\[ t_{p} = \frac{p}{S} - p * 40 \]
+Thus, parallel time \(t_p\) is as follows:
 
-where \(t_{s} = 40\) days.
+\[ t_p = \frac{T_s}{S} \]
+
+\[ t_p = 100 * (0.4 + \frac{0.6}{P}) \]
 
 \pagebreak
 
