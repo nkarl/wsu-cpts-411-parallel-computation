@@ -1,4 +1,4 @@
-#include "unit_a.hpp"
+#include "unit_a.h"
 
 using std::cout;
 using std::queue;
@@ -6,7 +6,9 @@ using std::string;
 
 #define TIME_STEPS 4
 #define M 3
-#define N 3
+#define N 4
+
+void print_board(int board[M][N]); 
 
 bool run_unit_a() {
     int inp_cells[M][N] {};  // placeholder
@@ -19,15 +21,19 @@ bool run_unit_a() {
         }
     }
 
-    // VISUAL OUTPUT
+    print_board(inp_cells);
+
+    return true;
+}
+
+void print_board(int board[M][N]) {
     cout << "\nINPUT CELLS:";
     cout << "\n------------\n";
     for (int i=0; i<M; ++i) {
         for (int j=0; j<N; ++j) {
-            cout << inp_cells[i][j] << " ";
+            cout << board[i][j] << " ";
         }
         cout << "\n";
     }
-
-    return true;
 }
+
