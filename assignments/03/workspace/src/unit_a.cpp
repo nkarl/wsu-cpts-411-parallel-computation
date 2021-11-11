@@ -4,24 +4,24 @@ using std::cout;
 using std::queue;
 using std::string;
 
-bool run_unit_a()
-{
-    queue<TestResult> TestReport;
-    static Test<void> test_master;
+#define TIME_STEPS 4
+#define M 3
+#define N 3
 
-    TestHeader(test_master, -2, "PRINT A TEST STRING");
-    test_master.isPassed = [&]() {
-        cout << "This test prints its own name: " << test_master.Name;
-        return true;
-    }();
-    recordTestResult(test_master, TestReport);
+bool run_unit_a() {
+    int inp_cells[M][N] {};  // placeholder
+    int out_cells[M][N] {};  // placeholder
 
-    TestHeader(test_master, -1, "PRINT THE TEST SERIAL");
-    test_master.isPassed = [&]() {
-        cout << "This test prints its own serial: " << test_master.Serial;
-        return true;
-    }();
-    recordTestResult(test_master, TestReport);
+    // RANDOMIZE THE BOARD
+
+    cout << "\nINPUT CELLS:";
+    cout << "\n------------\n";
+    for (int i=0; i<M; ++i) {
+        for (int j=0; j<N; ++j) {
+            cout << inp_cells[i][j] << " ";
+        }
+        cout << "\n";
+    }
 
     return true;
 }
