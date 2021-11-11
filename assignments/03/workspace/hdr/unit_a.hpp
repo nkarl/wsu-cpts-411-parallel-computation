@@ -4,6 +4,7 @@
 // #include "module/csvParser.hpp"
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 #include "module/TesterTool.hpp"
 

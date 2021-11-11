@@ -13,7 +13,13 @@ bool run_unit_a() {
     int out_cells[M][N] {};  // placeholder
 
     // RANDOMIZE THE BOARD
+    for (int i=0; i<M; ++i) {
+        for (int j=0; j<N; ++j) {
+            inp_cells[i][j] = rand() % 2;
+        }
+    }
 
+    // VISUAL OUTPUT
     cout << "\nINPUT CELLS:";
     cout << "\n------------\n";
     for (int i=0; i<M; ++i) {
